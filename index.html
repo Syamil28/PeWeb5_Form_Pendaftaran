@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('https://image.freepik.com/free-vector/coronavirus-vaccination-background_23-2148671471.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding-top: 8%;
+            padding-bottom: 8%;
+        }
+    </style>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+    <title>Vaksin Kuy</title>
+</head>
+ 
+<body>
+    <div class="header">
+        <h1 style="text-align: center; color: white;">Covid-19 Vaccination Form</h1>
+    </div>
+ 
+    <div class="container">
+        <div class="card" style="background-color: rgb(124, 186, 236)">
+            <div class="card-body" style="color: white;">
+                <form name="vaccinationForm" action="" method="post" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input class="form-control" name="name" id="name" maxlength="35" minlength="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Student ID</label>
+                        <input class="form-control" name="stdid">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold mt-1">Gender</label>
+                        <br>
+                        <input type="radio" id="option1" name="gender" value="2">
+                        <label for="option1">Man</label><br>
+                        <input type="radio" id="option2" name="gender" value="1">
+                        <label for="option2">Woman</label><br>
+                    </div>
+ 
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Major</label>
+                        <input class="form-control" name="major" id="major">
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea name="address" id="" cols="30" rows="3" placeholder="full address" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Do you already vaccinated??</label>
+                        <select onchange="isVaksin()" name="vaccine_desc" class="form-control">
+                    <option value="1">ALREADY</option>
+                    <option value="2">NOT YET</option>
+                </select>
+                    </div>
+                    <div id="already_vac" style="display: none;">
+                        <h6>Fill your vaccine information</h6>
+                        <hr>
+                        <div class="form-group">
+                            <label>Kind of Vaccine</label>
+                            <select name="vac_kind" class="form-control">
+                            <option value="1">Sinovac</option>
+                            <option value="2">AstraZeneca</option>
+                            <option value="3">Novavax</option>
+                            <option value="4">Sinopharm</option>
+                            <option value="5">Moderna</option>
+                            <option value="6">Pfizer</option>
+                    </select>
+                        </div>
+                        <div class="form-group">
+                            <label>What dose?</label>
+                            <input type="text" name="dose" placeholder="" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Certificate ID</label>
+                            <input type="text" name="certif_id" placeholder="" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Vaccination Date</label>
+                            <input type="date" name="vac_date" placeholder="" class="form-control">
+                        </div>
+                    </div>
+                    <div id="not_vac" style="display: none;">
+                        <hr>
+                        <div class="form-group">
+                            <label>Reasons for not getting vaccinated</label>
+                            <textarea name="vac_reason" id="" cols="30" rows="3" placeholder="Fill your reasons" class="form-control"></textarea>
+                    </select>
+                        </div>
+                    </div>
+                    <div class="btnFinish">
+                        <button type="submit" class="btn btn-primary btnSubmit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+ 
+</html>
